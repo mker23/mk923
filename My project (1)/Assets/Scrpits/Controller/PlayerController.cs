@@ -9,6 +9,18 @@ public class PlayerController : MonoBehaviour
     Camera viewCamera;                                                      //메인 카메라를 가져오기 위한 카메라 클래스 선언
     Vector3 velocity;                                                       //이동 방향 벡터를 선언
     public ProjectileController projectileController;
+
+
+    public int Player_Hp = 50;
+    public void Damaged(int Damage)
+    {
+        Player_Hp -= Damage;
+
+        if(Player_Hp < 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
     
 
     void Start()
